@@ -2,12 +2,11 @@
   "name": "KD Garments – Dev",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "postCreateCommand": "npm install",
-  "postStartCommand": "npm run dev -- --host",
   "forwardPorts": [5173],
   "portsAttributes": {
     "5173": {
       "label": "KD Garments Dev Server",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "notify"
     }
   },
   "customizations": {
