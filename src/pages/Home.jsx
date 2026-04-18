@@ -106,7 +106,7 @@ export default function Home() {
               {[
                 { num: '500+', label: 'Styles Available' },
                 { num: '10K+', label: 'Happy Customers' },
-                { num: '15+', label: 'Years in Business' },
+                { num: '44+', label: 'Years in Business' },
               ].map(({ num, label }) => (
                 <div key={label}>
                   <p className="font-heading font-black text-white text-3xl">{num}</p>
@@ -185,6 +185,47 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── TAGLINE + HOW TO BUY ─────────────────────────────────────── */}
+      <section className="py-16 bg-cream">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="font-heading font-black text-navy text-3xl sm:text-4xl mb-2">
+              Pure market se sab se hatke mal milega,{' '}
+              <span className="text-primary-500">best daam par.</span>
+            </p>
+            <p className="text-gray-500 font-body text-lg">Har season ka sabse trendy collection, sirf KD Garments pe.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              {
+                step: '1',
+                title: 'Dhundhen',
+                desc: 'Shop page pe apna pasandida design dhundhen. Size aur design dekhen.',
+              },
+              {
+                step: '2',
+                title: 'WhatsApp Karen',
+                desc: 'Product card pe "Order on WhatsApp" dabayein. Hum seedha jawab denge.',
+              },
+              {
+                step: '3',
+                title: 'Paayein',
+                desc: 'Ghar pe delivery ya Gandhi Nagar se seedha uthayein. Aapki marzi.',
+              },
+            ].map(({ step, title, desc }) => (
+              <div key={step} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+                <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white font-heading font-black text-xl mx-auto mb-4">
+                  {step}
+                </div>
+                <h3 className="font-heading font-bold text-navy text-lg mb-2">{title}</h3>
+                <p className="text-gray-500 font-body text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -283,18 +324,17 @@ export default function Home() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="hidden lg:grid grid-cols-2 gap-4"
+            className="hidden lg:flex flex-col justify-center gap-5"
           >
             {[
-              { img: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&q=80', label: 'T-Shirts' },
-              { img: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80', label: 'Jeans' },
-              { img: 'https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=300&q=80', label: 'Ethnic' },
-              { img: 'https://images.unsplash.com/photo-1522165078649-823cf4dbaf46?w=300&q=80', label: 'Sportswear' },
-            ].map(({ img, label }) => (
-              <div key={label} className="relative rounded-2xl overflow-hidden aspect-square">
-                <img src={img} alt={label} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <span className="absolute bottom-3 left-3 text-white font-heading font-semibold text-sm">{label}</span>
+              { num: '50+', label: 'Minimum order pieces' },
+              { num: '35%', label: 'Maximum savings' },
+              { num: '500+', label: 'Retailer partners across India' },
+              { num: '24h', label: 'Order confirmation time' },
+            ].map(({ num, label }) => (
+              <div key={label} className="flex items-center gap-5 bg-white/5 rounded-2xl p-4 border border-white/10">
+                <p className="font-heading font-black text-primary-400 text-3xl w-20 flex-shrink-0">{num}</p>
+                <p className="text-gray-300 font-body text-sm">{label}</p>
               </div>
             ))}
           </motion.div>
@@ -384,29 +424,31 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* Shop photo */}
+            {/* Shop info card */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-[420px] relative"
+              className="rounded-2xl shadow-xl h-80 lg:h-[420px] relative bg-navy flex flex-col justify-end overflow-hidden"
             >
               <img
                 src="/shop-front.jpeg"
-                alt="New K.D. Garments – Arya Samaj Gali, Gandhi Nagar"
-                className="w-full h-full object-cover"
+                alt="New K.D. Garments"
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={(e) => { e.target.style.display = 'none' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <p className="font-heading font-bold text-xl">New K.D. Garments</p>
-                <p className="font-body text-sm text-gray-200">741/A (6879), Arya Samaj Gali, Gandhi Nagar, Delhi – 31</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="relative p-6 text-white">
+                <p className="font-heading font-black text-2xl mb-1">New K.D. Garments</p>
+                <p className="font-body text-sm text-gray-300 mb-1">Sanjay Arora, +91 92107 06738</p>
+                <p className="font-body text-sm text-gray-400 mb-3">741/A (6879), Arya Samaj Gali, Gandhi Nagar, Delhi 110031</p>
                 <a
                   href="https://maps.google.com/maps?q=IX/6879+Arya+Samaj+Gali+Near+Mahavir+Chowk+Gandhi+Nagar+New+Delhi+110031"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 mt-2 bg-primary-500 hover:bg-primary-600 text-white text-xs font-body font-semibold px-3 py-1.5 rounded-full transition-colors"
+                  className="inline-flex items-center gap-1.5 bg-primary-500 hover:bg-primary-600 text-white text-xs font-body font-semibold px-3 py-1.5 rounded-full transition-colors"
                 >
-                  Google Maps Par Dekhen →
+                  Open in Google Maps
                 </a>
               </div>
             </motion.div>

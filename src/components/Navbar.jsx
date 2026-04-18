@@ -44,8 +44,17 @@ export default function Navbar() {
             alt="KD Kids Wear"
             className="h-10 w-auto"
             style={{ mixBlendMode: 'screen' }}
+            onError={(e) => {
+              e.target.style.display = 'none'
+              e.target.nextSibling.querySelector('.logo-fallback').style.display = 'flex'
+            }}
           />
           <div className="leading-tight">
+            <div
+              className="logo-fallback hidden w-9 h-9 bg-primary-500 rounded-lg items-center justify-center font-heading font-black text-white text-sm mb-0.5"
+            >
+              KD
+            </div>
             <span className="block font-heading font-bold text-white text-base tracking-wide">
               KD Garments
             </span>

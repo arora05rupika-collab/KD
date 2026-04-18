@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { WA_PHONE } from '../data/products'
 
 function WhatsAppIcon() {
@@ -10,17 +9,13 @@ function WhatsAppIcon() {
 }
 
 export default function ProductCard({ product }) {
-  const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || '')
-
-  const productUrl = `${window.location.origin}/shop`
-
   const waMessage = product.showPrice
-    ? `Hi KD Garments! I want to order:\n\n*${product.name}*\nSize: ${selectedSize}\nPrice: Rs.${product.price}\n\nProduct link: ${productUrl}\n\nPlease confirm availability.`
-    : `Hi KD Garments! I am interested in:\n\n*${product.name}*\nSize: ${selectedSize}\n\nProduct link: ${productUrl}\n\nPlease share price and availability.`
+    ? `Hi KD Garments! I want to order:\n\n*${product.name}*\nAvailable sizes: ${product.sizeRange}\nPrice: Rs.${product.price}\n\nPlease confirm availability and my preferred size.`
+    : `Hi KD Garments! I am interested in:\n\n*${product.name}*\nAvailable sizes: ${product.sizeRange}\n\nPlease share price and availability.`
 
   const waLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(waMessage)}`
 
-  const retailerMessage = `Hi KD Garments! I want to buy a single piece:\n\n*${product.name}* (Size: ${selectedSize})\n\nCan you share the nearest retailer details or delivery options?`
+  const retailerMessage = `Hi KD Garments! I want to buy a single piece of *${product.name}*. Can you share the nearest retailer to my area or delivery options?`
   const retailerLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(retailerMessage)}`
 
   return (
@@ -51,25 +46,7 @@ export default function ProductCard({ product }) {
         <h3 className="font-heading font-semibold text-navy text-sm leading-snug line-clamp-2">
           {product.name}
         </h3>
-
-        {/* Size selector */}
-        {product.sizes && product.sizes.length > 0 && (
-          <div className="flex flex-wrap gap-1 mt-1">
-            {product.sizes.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSelectedSize(s)}
-                className={`text-[11px] px-2 py-0.5 rounded-md border font-body font-semibold transition-colors ${
-                  selectedSize === s
-                    ? 'bg-navy text-white border-navy'
-                    : 'border-gray-200 text-gray-500 hover:border-navy hover:text-navy'
-                }`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-        )}
+        <p className="text-xs text-gray-400 font-body">Sizes: {product.sizeRange}</p>
 
         {product.showPrice ? (
           <p className="font-heading font-black text-navy text-xl mt-1">Rs.{product.price}</p>
@@ -77,7 +54,6 @@ export default function ProductCard({ product }) {
           <p className="text-xs text-primary-500 font-body font-semibold mt-1 italic">Price on inquiry</p>
         )}
 
-        {/* WhatsApp order button */}
         <a
           href={waLink}
           target="_blank"
@@ -88,7 +64,6 @@ export default function ProductCard({ product }) {
           {product.showPrice ? 'Order on WhatsApp' : 'Inquire on WhatsApp'}
         </a>
 
-        {/* Single piece / retailer finder */}
         <a
           href={retailerLink}
           target="_blank"
