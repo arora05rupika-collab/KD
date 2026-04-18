@@ -432,7 +432,7 @@ export default function Home() {
               className="rounded-2xl shadow-xl h-80 lg:h-[420px] relative bg-navy flex flex-col justify-end overflow-hidden"
             >
               <img
-                src="/shop-front.jpeg"
+                src="/shop-front.webp"
                 alt="New K.D. Garments"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => { e.target.style.display = 'none' }}
