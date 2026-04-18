@@ -23,7 +23,7 @@ export default function Shop() {
     <div className="min-h-screen bg-cream pt-24">
       {/* Page header */}
       <div className="bg-navy text-white py-14 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/shop-front.webp')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/products/shop-front.webp')] bg-cover bg-center opacity-10" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <p className="text-primary-300 font-body text-sm uppercase tracking-widest mb-2">
             Hamaara Collection

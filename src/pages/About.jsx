@@ -49,7 +49,7 @@ export default function About() {
     <div className="min-h-screen pt-24 bg-cream">
       {/* Hero */}
       <section className="bg-navy py-20 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/shop-front.webp')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/products/shop-front.webp')] bg-cover bg-center opacity-10" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.span
             initial={{ opacity: 0 }}
@@ -131,7 +131,7 @@ export default function About() {
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-navy/10">
                   <img
-                    src="/shop-front.webp"
+                    src="/products/shop-front.webp"
                     alt="KD Garments Shop"
                     className="w-full h-full object-cover"
                   />

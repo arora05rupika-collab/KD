@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src="/kd-logo.png"
+            src="/products/kd-logo.png"
             alt="KD Kids Wear"
             className="h-10 w-auto"
             style={{ mixBlendMode: 'screen' }}
