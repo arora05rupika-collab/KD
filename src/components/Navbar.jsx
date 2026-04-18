@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { FiShoppingCart, FiMenu, FiX, FiPhone } from 'react-icons/fi'
-import { useCart } from '../context/CartContext'
+import { FiMenu, FiX, FiPhone } from 'react-icons/fi'
 
 const navLinks = [
   { to: '/',          label: 'Home' },
@@ -12,7 +11,6 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const { totalItems, dispatch } = useCart()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
@@ -35,7 +33,7 @@ export default function Navbar() {
     >
       {/* Top bar */}
       <div className="bg-primary-500 text-white text-xs text-center py-1.5 font-body tracking-wide">
-        Free delivery on orders above ₹999 &nbsp;|&nbsp; Wholesale available — min. 6 pieces per style
+        Wholesale available — min. 6 pieces per style &nbsp;|&nbsp; Visit us at Gandhi Nagar, New Delhi
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
@@ -49,7 +47,7 @@ export default function Navbar() {
               KD Garments
             </span>
             <span className="block text-[10px] text-primary-300 font-body tracking-wider uppercase">
-              Gandhi Nagar
+              Gandhi Nagar, Delhi
             </span>
           </div>
         </Link>
@@ -78,25 +76,12 @@ export default function Navbar() {
         {/* Right actions */}
         <div className="flex items-center gap-3">
           <a
-            href="tel:+919876543210"
+            href="tel:+919210706738"
             className="hidden sm:flex items-center gap-1.5 text-gray-300 hover:text-primary-400 transition-colors font-body text-sm"
           >
             <FiPhone size={14} />
-            <span className="hidden lg:inline">+91 98765 43210</span>
+            <span className="hidden lg:inline">+91 92107 06738</span>
           </a>
-
-          <button
-            onClick={() => dispatch({ type: 'OPEN_CART' })}
-            className="relative p-2 text-gray-300 hover:text-white transition-colors"
-            aria-label="Open cart"
-          >
-            <FiShoppingCart size={22} />
-            {totalItems > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 bg-primary-500 text-white text-[10px] font-bold w-4.5 h-4.5 min-w-[18px] min-h-[18px] rounded-full flex items-center justify-center">
-                {totalItems}
-              </span>
-            )}
-          </button>
 
           <button
             className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
@@ -131,10 +116,10 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href="tel:+919876543210"
+            href="tel:+919210706738"
             className="flex items-center gap-2 mt-3 px-4 py-3 text-gray-300 hover:text-white text-sm font-body"
           >
-            <FiPhone size={15} /> +91 98765 43210
+            <FiPhone size={15} /> +91 92107 06738
           </a>
         </div>
       )}

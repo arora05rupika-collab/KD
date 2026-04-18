@@ -81,9 +81,9 @@ export default function Contact() {
             {
               icon: <FiPhone />,
               label: 'Call Us',
-              value: '+91 98765 43210',
-              sub: 'Mon–Sat, 10 AM–8 PM',
-              href: 'tel:+919876543210',
+              value: '+91 92107 06738',
+              sub: 'Tue–Sun, 10 AM–8 PM',
+              href: 'tel:+919210706738',
               color: 'text-blue-500 bg-blue-50',
             },
             {
@@ -98,16 +98,16 @@ export default function Contact() {
               icon: <FiMapPin />,
               label: 'Visit Us',
               value: 'Gandhi Nagar, Delhi',
-              sub: 'Shop No. XX, Market',
+              sub: 'Near Mahavir Chowk',
               href: '#map',
               color: 'text-primary-500 bg-primary-50',
             },
             {
               icon: <FiMessageSquare />,
               label: 'WhatsApp',
-              value: '+91 98765 43210',
+              value: '+91 92107 06738',
               sub: 'Quick replies guaranteed',
-              href: 'https://wa.me/919876543210',
+              href: 'https://wa.me/919210706738',
               color: 'text-[#25D366] bg-green-50',
             },
           ].map((item) => (
@@ -140,8 +140,8 @@ export default function Contact() {
             <h2 className="font-heading font-black text-navy text-3xl mb-6">Find Our Store</h2>
             <div className="rounded-2xl overflow-hidden shadow-lg h-72 mb-5">
               <iframe
-                title="KD Garments – Gandhi Nagar Delhi"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=77.2487%2C28.6617%2C77.2587%2C28.6697&layer=mapnik&marker=28.6657%2C77.2537"
+                title="KD Garments – Gandhi Nagar, New Delhi"
+                src="https://maps.google.com/maps?q=IX%2F6879+Arya+Samaj+Gali+Near+Mahavir+Chowk+Gandhi+Nagar+New+Delhi+110031+India&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -150,7 +150,7 @@ export default function Contact() {
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Gandhi+Nagar+Market+Delhi"
+              href="https://maps.google.com/maps?q=IX/6879+Arya+Samaj+Gali+Near+Mahavir+Chowk+Gandhi+Nagar+New+Delhi+110031+India"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-navy hover:bg-primary-500 text-white font-heading font-semibold px-5 py-2.5 rounded-full text-sm transition-all"
@@ -162,20 +162,23 @@ export default function Contact() {
               <h3 className="font-heading font-bold text-navy mb-3">Store Details</h3>
               <div className="space-y-2 text-sm font-body text-gray-600">
                 <p>
-                  <span className="font-semibold text-navy">Address:</span> Shop No. XX, Gandhi Nagar Market, New Delhi – 110031
+                  <span className="font-semibold text-navy">Address:</span> IX/6879, Arya Samaj Gali, Near Mahavir Chowk, Gandhi Nagar, New Delhi – 110031
                 </p>
                 <p>
-                  <span className="font-semibold text-navy">Landmark:</span> Near Gandhi Nagar Railway Station
+                  <span className="font-semibold text-navy">Landmark:</span> Near Mahavir Chowk, Gandhi Nagar
                 </p>
-                <div className="flex gap-4 pt-1">
-                  <div>
-                    <p className="font-semibold text-navy text-xs mb-1">Weekdays</p>
-                    <p className="flex items-center gap-1 text-xs"><FiClock size={11} /> 10 AM – 8 PM</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-navy text-xs mb-1">Sunday</p>
-                    <p className="flex items-center gap-1 text-xs"><FiClock size={11} /> 11 AM – 6 PM</p>
-                  </div>
+                <div className="mt-3 space-y-1">
+                  {[
+                    { day: 'Monday',         time: 'Closed',       closed: true },
+                    { day: 'Tue – Fri',      time: '10 AM – 8 PM', closed: false },
+                    { day: 'Saturday',       time: '10 AM – 8 PM', closed: false },
+                    { day: 'Sunday',         time: '10 AM – 8 PM', closed: false },
+                  ].map(({ day, time, closed }) => (
+                    <div key={day} className="flex justify-between text-xs">
+                      <span className={closed ? 'text-gray-400' : 'text-gray-600'}>{day}</span>
+                      <span className={closed ? 'text-red-500 font-semibold' : 'text-gray-700 font-medium'}>{time}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

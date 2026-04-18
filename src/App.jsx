@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import { CartProvider } from './context/CartContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import CartDrawer from './components/CartDrawer'
 import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
@@ -34,7 +32,6 @@ function AppLayout() {
         </Routes>
       </main>
       <Footer />
-      <CartDrawer />
       <WhatsAppButton />
     </>
   )
@@ -43,9 +40,7 @@ function AppLayout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <AppLayout />
-      </CartProvider>
+      <AppLayout />
     </BrowserRouter>
   )
 }

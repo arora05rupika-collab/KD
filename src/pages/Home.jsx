@@ -490,8 +490,8 @@ export default function Home() {
               className="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-96"
             >
               <iframe
-                title="KD Garments Location – Gandhi Nagar, Delhi"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=77.2487%2C28.6617%2C77.2587%2C28.6697&layer=mapnik&marker=28.6657%2C77.2537"
+                title="KD Garments – Gandhi Nagar, New Delhi"
+                src="https://maps.google.com/maps?q=IX%2F6879+Arya+Samaj+Gali+Near+Mahavir+Chowk+Gandhi+Nagar+New+Delhi+110031+India&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -514,7 +514,7 @@ export default function Home() {
                 <div>
                   <h4 className="font-heading font-semibold text-navy mb-1">Our Address</h4>
                   <p className="text-gray-500 font-body text-sm">
-                    Shop No. XX, Gandhi Nagar Market,<br />New Delhi – 110031
+                    IX/6879, Arya Samaj Gali,<br />Near Mahavir Chowk, Gandhi Nagar,<br />New Delhi – 110031
                   </p>
                 </div>
               </div>
@@ -522,16 +522,16 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
                   <h4 className="font-heading font-semibold text-navy text-sm mb-2">Store Hours</h4>
-                  <p className="text-gray-500 font-body text-xs">Mon – Sat: 10 AM – 8 PM</p>
-                  <p className="text-gray-500 font-body text-xs">Sunday: 11 AM – 6 PM</p>
+                  <p className="text-gray-500 font-body text-xs">Tue – Sun: 10 AM – 8 PM</p>
+                  <p className="text-red-400 font-body text-xs font-semibold">Monday: Closed</p>
                 </div>
                 <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
                   <h4 className="font-heading font-semibold text-navy text-sm mb-2">Contact</h4>
-                  <a href="tel:+919876543210" className="text-primary-500 font-body text-xs block hover:underline">
-                    +91 98765 43210
+                  <a href="tel:+919210706738" className="text-primary-500 font-body text-xs block hover:underline">
+                    +91 92107 06738
                   </a>
-                  <a href="mailto:info@kdgarments.in" className="text-primary-500 font-body text-xs block hover:underline mt-1">
-                    info@kdgarments.in
+                  <a href="https://wa.me/919210706738" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-body text-xs block hover:underline mt-1">
+                    WhatsApp Us
                   </a>
                 </div>
               </div>
