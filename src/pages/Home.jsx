@@ -188,45 +188,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CATEGORIES ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="text-primary-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              Browse by Style
-            </span>
-            <h2 className="font-heading font-black text-navy text-4xl mt-2">Shop by Category</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((cat, i) => (
-              <motion.div
-                key={cat.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-              >
-                <Link
-                  to={`/shop?category=${cat.id}`}
-                  className="flex flex-col items-center gap-3 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 group border border-gray-100"
-                >
-                  <span className="text-4xl group-hover:scale-110 transition-transform">{cat.icon}</span>
-                  <span className="font-heading font-semibold text-navy text-xs text-center leading-snug">
-                    {cat.label}
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── AGE GROUPS ───────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
