@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiCheck, FiPackage, FiTrendingUp, FiUsers, FiPhone, FiMail, FiArrowRight, FiStar } from 'react-icons/fi'
-import { wholesalePacks, categories } from '../data/products'
+import { wholesalePacks } from '../data/products'
 
 const steps = [
   { step: '01', title: 'Choose Your Pack', desc: 'Select a starter, standard, or premium pack based on your budget and needs.' },
@@ -258,12 +258,12 @@ export default function Wholesale() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-heading font-black text-navy text-3xl mb-8">Available Wholesale Categories</h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((cat) => (
+            {['Shirts', 'Party Wear', 'Ethnic / Sherwani', 'Casual Sets', 'Formal Suits', 'Teen Wear'].map((cat) => (
               <span
-                key={cat.id}
+                key={cat}
                 className="inline-flex items-center gap-2 bg-gray-100 text-navy font-body font-medium px-4 py-2.5 rounded-full text-sm"
               >
-                {cat.icon} {cat.label}
+                {cat}
               </span>
             ))}
           </div>

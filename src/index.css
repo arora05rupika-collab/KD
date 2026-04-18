@@ -7,31 +7,24 @@
     scroll-behavior: smooth;
   }
   body {
-    font-family: 'Inter', sans-serif;
-    @apply text-gray-900;
+    font-family: 'Hind', system-ui, sans-serif;
+    background-color: #FAF5EE;
+    color: #1A0303;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
 @layer utilities {
   .font-heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
   .font-body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Hind', system-ui, sans-serif;
   }
 }
 
-/* Smooth scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #FF6B35;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FAF5EE; }
+::-webkit-scrollbar-thumb { background: #B91C1C; border-radius: 3px; }

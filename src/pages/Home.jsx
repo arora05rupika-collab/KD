@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiTruck, FiShield, FiPackage, FiStar, FiMapPin } from 'react-icons/fi'
-import { products, categories, ageGroups } from '../data/products'
+import { products } from '../data/products'
 import ProductCard from '../components/ProductCard'
 
 const featured = products.filter((p) => p.featured)
@@ -481,13 +481,13 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
             {/* Map */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-96"
+              className="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-[420px]"
             >
               <iframe
                 title="KD Garments – Gandhi Nagar, New Delhi"
@@ -500,48 +500,31 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* Info */}
+            {/* Shop photo */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="rounded-2xl overflow-hidden shadow-xl h-80 lg:h-[420px] relative"
             >
-              <div className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-                <div className="w-11 h-11 bg-primary-100 rounded-xl flex items-center justify-center text-primary-500 flex-shrink-0">
-                  <FiMapPin size={20} />
-                </div>
-                <div>
-                  <h4 className="font-heading font-semibold text-navy mb-1">Our Address</h4>
-                  <p className="text-gray-500 font-body text-sm">
-                    IX/6879, Arya Samaj Gali,<br />Near Mahavir Chowk, Gandhi Nagar,<br />New Delhi – 110031
-                  </p>
-                </div>
+              <img
+                src="/shop-front.jpeg"
+                alt="New K.D. Garments – Arya Samaj Gali, Gandhi Nagar"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                <p className="font-heading font-bold text-xl">New K.D. Garments</p>
+                <p className="font-body text-sm text-gray-200">741/A (6879), Arya Samaj Gali, Gandhi Nagar, Delhi – 31</p>
+                <a
+                  href="https://maps.google.com/maps?q=IX/6879+Arya+Samaj+Gali+Near+Mahavir+Chowk+Gandhi+Nagar+New+Delhi+110031"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-2 bg-primary-500 hover:bg-primary-600 text-white text-xs font-body font-semibold px-3 py-1.5 rounded-full transition-colors"
+                >
+                  Google Maps Par Dekhen →
+                </a>
               </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-                  <h4 className="font-heading font-semibold text-navy text-sm mb-2">Store Hours</h4>
-                  <p className="text-gray-500 font-body text-xs">Tue – Sun: 10 AM – 8 PM</p>
-                  <p className="text-red-400 font-body text-xs font-semibold">Monday: Closed</p>
-                </div>
-                <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-                  <h4 className="font-heading font-semibold text-navy text-sm mb-2">Contact</h4>
-                  <a href="tel:+919210706738" className="text-primary-500 font-body text-xs block hover:underline">
-                    +91 92107 06738
-                  </a>
-                  <a href="https://wa.me/919210706738" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-body text-xs block hover:underline mt-1">
-                    WhatsApp Us
-                  </a>
-                </div>
-              </div>
-
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-navy hover:bg-primary-500 text-white font-heading font-bold px-6 py-3 rounded-full transition-all duration-200 hover:scale-105"
-              >
-                Get Directions <FiArrowRight />
-              </Link>
             </motion.div>
           </div>
         </div>
