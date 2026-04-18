@@ -33,15 +33,18 @@ export default function Navbar() {
     >
       {/* Top bar */}
       <div className="bg-primary-500 text-white text-xs text-center py-1.5 font-body tracking-wide">
-        Wholesale available — min. 6 pieces per style &nbsp;|&nbsp; Visit us at Gandhi Nagar, New Delhi
+        Wholesale available, min. 6 pieces per style &nbsp;|&nbsp; Visit us at Gandhi Nagar, New Delhi
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 bg-primary-500 rounded-lg flex items-center justify-center font-heading font-black text-white text-sm group-hover:bg-primary-400 transition-colors">
-            KD
-          </div>
+          <img
+            src="/kd-logo.png"
+            alt="KD Kids Wear"
+            className="h-10 w-auto"
+            style={{ mixBlendMode: 'screen' }}
+          />
           <div className="leading-tight">
             <span className="block font-heading font-bold text-white text-base tracking-wide">
               KD Garments

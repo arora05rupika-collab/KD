@@ -11,7 +11,7 @@ const steps = [
 ]
 
 const benefits = [
-  { icon: <FiStar />, title: 'Best Quality', desc: 'Premium fabrics, durable stitching — guaranteed quality on every piece.' },
+  { icon: <FiStar />, title: 'Best Quality', desc: 'Premium fabrics, durable stitching. Guaranteed quality on every piece.' },
   { icon: <FiPackage />, title: 'Flexible Minimums', desc: 'Just 6 pieces per style. No huge MOQ. Perfect for small retailers.' },
   { icon: <FiTrendingUp />, title: 'Trend-First Designs', desc: 'New collections every season. Always be ahead of the trend curve.' },
   { icon: <FiUsers />, title: 'Dedicated Support', desc: 'Your own account manager. WhatsApp support during business hours.' },
@@ -62,7 +62,7 @@ export default function Wholesale() {
             transition={{ delay: 0.2 }}
             className="text-gray-300 font-body text-lg leading-relaxed max-w-2xl mx-auto mb-8"
           >
-            Join 500+ retailers who source designer kids & teen wear from KD Garments, Gandhi Nagar. Get the best wholesale prices, latest designs, and reliable delivery — all year round.
+            Join 500+ retailers who source designer kids and teen wear from KD Garments, Gandhi Nagar. Best wholesale prices, latest designs, reliable delivery all year round.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

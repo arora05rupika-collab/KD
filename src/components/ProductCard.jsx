@@ -1,12 +1,5 @@
-import { FiStar } from 'react-icons/fi'
+import { useState } from 'react'
 import { WA_PHONE } from '../data/products'
-
-const badgeColors = {
-  'New Arrival': 'bg-emerald-500',
-  Bestseller:    'bg-amber-500',
-  Trending:      'bg-purple-500',
-  Premium:       'bg-yellow-500 text-yellow-900',
-}
 
 function WhatsAppIcon() {
   return (
@@ -17,15 +10,18 @@ function WhatsAppIcon() {
 }
 
 export default function ProductCard({ product }) {
-  const priceText = product.showPrice
-    ? `₹${product.price} · Sizes: ${product.sizeRange}`
-    : `Sizes: ${product.sizeRange}`
+  const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || '')
+
+  const productUrl = `${window.location.origin}/shop`
 
   const waMessage = product.showPrice
-    ? `Hi KD Garments! I'm interested in *${product.name}* (Sizes: ${product.sizeRange}, Price: ₹${product.price}). Please confirm availability.`
-    : `Hi KD Garments! I'm interested in *${product.name}* (Sizes: ${product.sizeRange}). Please share price and availability.`
+    ? `Hi KD Garments! I want to order:\n\n*${product.name}*\nSize: ${selectedSize}\nPrice: Rs.${product.price}\n\nProduct link: ${productUrl}\n\nPlease confirm availability.`
+    : `Hi KD Garments! I am interested in:\n\n*${product.name}*\nSize: ${selectedSize}\n\nProduct link: ${productUrl}\n\nPlease share price and availability.`
 
   const waLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(waMessage)}`
+
+  const retailerMessage = `Hi KD Garments! I want to buy a single piece:\n\n*${product.name}* (Size: ${selectedSize})\n\nCan you share the nearest retailer details or delivery options?`
+  const retailerLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(retailerMessage)}`
 
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex flex-col">
@@ -38,12 +34,13 @@ export default function ProductCard({ product }) {
           loading="lazy"
         />
         {product.badge && (
-          <span
-            className={`absolute top-3 left-3 text-[11px] text-white font-heading font-bold px-2.5 py-1 rounded-full ${
-              badgeColors[product.badge] || 'bg-primary-500'
-            }`}
-          >
+          <span className="absolute top-3 left-3 text-[11px] text-white font-heading font-bold px-2.5 py-1 rounded-full bg-primary-500">
             {product.badge}
+          </span>
+        )}
+        {product.limitedStock && (
+          <span className="absolute top-3 right-3 text-[10px] text-white font-heading font-bold px-2 py-1 rounded-full bg-amber-500">
+            Limited
           </span>
         )}
       </div>
@@ -55,20 +52,32 @@ export default function ProductCard({ product }) {
           {product.name}
         </h3>
 
-        <p className="text-xs text-gray-500 font-body">Sizes: {product.sizeRange}</p>
-
-        {/* Price or inquiry label */}
-        {product.showPrice ? (
-          <p className="font-heading font-black text-navy text-xl mt-1">
-            ₹{product.price}
-          </p>
-        ) : (
-          <p className="text-xs text-primary-500 font-body font-semibold mt-1 italic">
-            Price on inquiry
-          </p>
+        {/* Size selector */}
+        {product.sizes && product.sizes.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-1">
+            {product.sizes.map((s) => (
+              <button
+                key={s}
+                onClick={() => setSelectedSize(s)}
+                className={`text-[11px] px-2 py-0.5 rounded-md border font-body font-semibold transition-colors ${
+                  selectedSize === s
+                    ? 'bg-navy text-white border-navy'
+                    : 'border-gray-200 text-gray-500 hover:border-navy hover:text-navy'
+                }`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
         )}
 
-        {/* WhatsApp button */}
+        {product.showPrice ? (
+          <p className="font-heading font-black text-navy text-xl mt-1">Rs.{product.price}</p>
+        ) : (
+          <p className="text-xs text-primary-500 font-body font-semibold mt-1 italic">Price on inquiry</p>
+        )}
+
+        {/* WhatsApp order button */}
         <a
           href={waLink}
           target="_blank"
@@ -77,6 +86,16 @@ export default function ProductCard({ product }) {
         >
           <WhatsAppIcon />
           {product.showPrice ? 'Order on WhatsApp' : 'Inquire on WhatsApp'}
+        </a>
+
+        {/* Single piece / retailer finder */}
+        <a
+          href={retailerLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-center text-[11px] text-gray-400 hover:text-primary-500 font-body transition-colors underline underline-offset-2"
+        >
+          Want 1 piece? Find nearest retailer
         </a>
       </div>
     </div>

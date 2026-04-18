@@ -83,7 +83,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-gray-300 font-body text-lg leading-relaxed max-w-lg mb-8"
             >
-              Trendy, affordable boys fashion from age 2 to 17. Buy retail or in bulk wholesale — all from our Gandhi Nagar store and online.
+              Trendy, affordable boys fashion from age 2 to 17. Buy retail or in bulk wholesale, all from our Gandhi Nagar store and online.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
@@ -185,83 +185,6 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── AGE GROUPS ───────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <span className="text-primary-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              For Every Age
-            </span>
-            <h2 className="font-heading font-black text-navy text-4xl mt-2">Shop by Age Group</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              {
-                id: 'toddler',
-                label: 'Toddlers',
-                range: '2–4 yrs',
-                img: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?w=400&q=80',
-                color: 'from-pink-400 to-rose-500',
-              },
-              {
-                id: 'kids',
-                label: 'Kids',
-                range: '5–8 yrs',
-                img: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80',
-                color: 'from-blue-400 to-indigo-500',
-              },
-              {
-                id: 'boys',
-                label: 'Boys',
-                range: '9–12 yrs',
-                img: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80',
-                color: 'from-emerald-400 to-teal-500',
-              },
-              {
-                id: 'teens',
-                label: 'Teens',
-                range: '13–17 yrs',
-                img: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&q=80',
-                color: 'from-violet-400 to-purple-600',
-              },
-            ].map((ag, i) => (
-              <motion.div
-                key={ag.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Link
-                  to={`/shop?age=${ag.id}`}
-                  className="relative block rounded-2xl overflow-hidden aspect-[3/4] group"
-                >
-                  <img
-                    src={ag.img}
-                    alt={ag.label}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${ag.color} opacity-60`} />
-                  <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-white">
-                    <h3 className="font-heading font-black text-xl">{ag.label}</h3>
-                    <p className="font-body text-sm opacity-90">{ag.range}</p>
-                    <span className="mt-3 bg-white/20 backdrop-blur-sm border border-white/30 text-xs font-heading font-semibold px-3 py-1 rounded-full">
-                      Shop Now →
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

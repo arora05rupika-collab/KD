@@ -69,7 +69,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-gray-300 font-body"
           >
-            Visit us at Gandhi Nagar, call us, or drop a message — we're always happy to help.
+            Visit us at Gandhi Nagar, call us, or drop a message. We are always happy to help.
           </motion.p>
         </div>
       </section>

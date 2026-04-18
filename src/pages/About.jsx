@@ -6,52 +6,43 @@ import { WA_PHONE } from '../data/products'
 const values = [
   {
     icon: <FiHeart />,
-    title: 'Mohabbat Se Bunaayi',
-    desc: 'Har Poshak Mein Dil Ki Kaareedari Hai. Aaram, Mazbooti Aur Style — Tino Ka Sangam.',
+    title: 'Crafted with Care',
+    desc: 'Every piece is made with attention to comfort and durability. Quality you can feel.',
   },
   {
     icon: <FiAward />,
-    title: 'Behtareen Kapdaa',
-    desc: 'Sirf Umdaa Kapde Istemal Hote Hain. Har Silai Mein Ehtiyaat — Yahi Hamaari Pehchaan Hai.',
+    title: 'Premium Fabric',
+    desc: 'Only the best materials. Every stitch is checked before it reaches you.',
   },
   {
     icon: <FiGlobe />,
-    title: 'Duniya Bhar Ke Grahak',
-    desc: 'Middle East, New Zealand, Poore Hindustan Se Grahak Hamaare Paas Aate Hain. Vishwaas Ki Daastaan.',
+    title: 'Trusted Worldwide',
+    desc: 'Customers from Middle East, New Zealand, and across India trust us. 44 years of goodwill.',
   },
   {
     icon: <FiMapPin />,
-    title: 'Gandhi Nagar Ki Shaan',
-    desc: "Delhi Ke Sabse Bade Kapdaa Baazaar Mein Hamaari Buniyaad Hai. 1980 Se Abhi Tak — Ek Hi Jagah, Ek Hi Iraada.",
+    title: 'Gandhi Nagar Since 1980',
+    desc: "Rooted in Delhi's garment market for over four decades. Same place, same commitment.",
   },
-]
-
-const milestones = [
-  { year: '1980', event: 'Kodu Ram Ji Ne Gandhi Nagar Mein KD Garments Ki Neev Rakhi — Ek Chhoti Si Dukaan Se Badi Sapne Ke Saath' },
-  { year: '1995', event: 'Naam Itna Phail Gaya Ki Middle East Aur Gulf Se Bhi Grahak Aane Lage' },
-  { year: '2005', event: 'Beta Sanjay Arora Baap Ka Haath Thaam Kar Karobaar Mein Aaya — Nayi Soch, Wohi Wafadaari' },
-  { year: '2012', event: 'New Zealand Aur Aastra Lia Ke Grahak Bhi Jud Gaye — Yaani Duniya Bhar Mein KD Ki Dhamak' },
-  { year: '2019', event: 'Rehman Daket Wala Suit Dhurandhar Film Ke Baad Sab Ki Zubaan Par Chadh Gaya — Stock Pal Mein Khatam' },
-  { year: '2024', event: 'Aaj Bhi Wahi Mohabbat, Wahi Mazbooti — 44 Saal Ki Virasat Aur Hazaaron Khush Grahak' },
 ]
 
 const team = [
   {
     name: 'Kodu Ram Ji',
-    role: 'Bani Banaane Waale — Founder (1980)',
+    role: 'Founder (1980)',
     avatar: 'KR',
-    bio: 'Inhi Ki Mehnat Aur Imaan Ne KD Garments Ko Woh Maqam Dilaya Jahan Aaj Duniya Bhar Se Log Aate Hain.',
+    bio: 'Started KD Garments from a small shop in Gandhi Nagar. His hard work and honesty built the trust that brings customers from across the world today.',
   },
   {
-    name: 'Sanjay Arora',
-    role: 'Maalik — Owner',
-    avatar: 'SA',
-    bio: 'Walid Ki Virasat Ko Aage Le Jaane Wale. Naye Designs, Nayi Soch — Par Wohi Purana Yakeen Aur Mehnat.',
+    name: 'The Arora Family',
+    role: 'Running the Business',
+    avatar: 'KD',
+    bio: "Kodu Ram Ji's sons now manage the business together, carrying forward the same values. New designs, same dedication.",
   },
 ]
 
 export default function About() {
-  const waLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent('Assalamu Alaikum! KD Garments ke baare mein jaanna chahta hoon.')}`
+  const waLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent('Hello KD Garments! I would like to know more about your collection.')}`
 
   return (
     <div className="min-h-screen pt-24 bg-cream">
@@ -64,7 +55,7 @@ export default function About() {
             animate={{ opacity: 1 }}
             className="inline-flex items-center gap-2 bg-primary-500/20 text-primary-300 text-xs font-heading font-semibold px-3 py-1.5 rounded-full mb-5 uppercase tracking-widest"
           >
-            Hamaari Kahaani
+            Our Story
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -72,9 +63,9 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="font-heading font-black text-white text-5xl sm:text-6xl mb-5 leading-tight"
           >
-            1980 Se Abhi Tak —{' '}
+            Trusted Since 1980.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-yellow-400">
-              Ek Khaanadaan, Ek Vishwaas
+              Loved Worldwide.
             </span>
           </motion.h1>
           <motion.p
@@ -83,7 +74,7 @@ export default function About() {
             transition={{ delay: 0.2 }}
             className="text-gray-300 font-body text-lg leading-relaxed max-w-2xl mx-auto"
           >
-            Gandhi Nagar, Delhi Ke Dil Mein Basi Dukaan — Jahan Se Hazaaron Bachchon Ki Poshak Duniya Ke Koone Koone Mein Pahunchi Hai.
+            Gandhi Nagar, New Delhi. A family business that started with one shop and grew into a name customers across India, the Middle East, and New Zealand rely on.
           </motion.p>
         </div>
       </section>
@@ -97,27 +88,20 @@ export default function About() {
             viewport={{ once: true }}
           >
             <span className="text-primary-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              Shuruaat Ki Daastaan
+              How It Started
             </span>
             <h2 className="font-heading font-black text-navy text-4xl mt-2 mb-5">
-              Ek Sapna, Ek Dukaan, Ek Virasat
+              One Shop. Four Decades. One Family.
             </h2>
             <div className="space-y-4 text-gray-600 font-body leading-relaxed">
               <p>
-                Saal 1980 Mein <strong className="text-navy">Kodu Ram Ji</strong> Ne Gandhi Nagar Ke Maidaan Mein
-                Ek Chhoti Si Dukaan Shuru Ki. Iraada Ek Hi Tha — Behtareen Kapdaa, Saccha Daam, Aur Khushi Se
-                Grahak Ka Jaana.
+                In 1980, <strong className="text-navy">Kodu Ram Ji</strong> opened a small shop in Gandhi Nagar with a simple goal: honest pricing, good fabric, happy customers.
               </p>
               <p>
-                Waqt Ne Saath Diya. Kaam Ki Sachaai Aur Kapdey Ki Sifat Ne Aise Rang Dikhaaye Ki Gulf Se,{' '}
-                <strong className="text-navy">Middle East</strong> Se, Aur Poori Duniya Ke Koone Koone Se
-                Grahak Aane Lage. <strong className="text-navy">New Zealand</strong> Tak Mein KD Ka Naam
-                Pahunch Gaya.
+                Word spread. Customers from <strong className="text-navy">Gulf countries, the Middle East, and New Zealand</strong> started coming. Today KD Garments is one of the most trusted names in Gandhi Nagar.
               </p>
               <p>
-                Aaj <strong className="text-navy">Sanjay Arora</strong> — Kodu Ram Ji Ke Bete — Yahi Karobaar
-                Sambhal Rahe Hain. Nayi Design, Nayi Soch — Par Wahi Purana Yakeen Aur Dil Ka Kaam. Gandhi Nagar
-                Ka Sabse Bharosaemand Naam — <strong className="text-navy">New KD Garments</strong>.
+                His sons now manage the business together, keeping the same values alive while bringing in fresh designs every season. Boys' wear from age 2 to 17, retail and wholesale.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-8">
@@ -125,13 +109,13 @@ export default function About() {
                 to="/shop"
                 className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-heading font-bold px-6 py-3 rounded-full transition-all hover:scale-105"
               >
-                Collection Dekhen <FiArrowRight />
+                Shop Collection <FiArrowRight />
               </Link>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 border-2 border-navy text-navy font-heading font-bold px-6 py-3 rounded-full transition-all hover:bg-navy hover:text-white"
               >
-                Dukaan Aayein
+                Visit the Store
               </Link>
             </div>
           </motion.div>
@@ -147,27 +131,25 @@ export default function About() {
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-navy/10">
                   <img
                     src="/shop-front.jpeg"
-                    alt="KD Garments Shop Front"
+                    alt="KD Garments Shop"
                     className="w-full h-full object-cover"
-                    onError={(e) => { e.target.style.display = 'none' }}
                   />
                 </div>
                 <div className="bg-primary-500 text-white rounded-2xl p-5 text-center">
                   <p className="font-heading font-black text-3xl">44+</p>
-                  <p className="font-body text-sm text-primary-100">Saal Ka Tajurba</p>
+                  <p className="font-body text-sm text-primary-100">Years in Business</p>
                 </div>
               </div>
               <div className="space-y-4 mt-8">
                 <div className="bg-navy text-white rounded-2xl p-5 text-center">
-                  <p className="font-heading font-black text-3xl">Duniya</p>
-                  <p className="font-body text-sm text-gray-300">Bhar Ke Grahak</p>
+                  <p className="font-heading font-black text-3xl">Global</p>
+                  <p className="font-body text-sm text-gray-300">Customer Base</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-primary-100">
                   <img
                     src="/products/suit-rehman-daket.jpeg"
                     alt="Rehman Daket Suit"
                     className="w-full h-full object-cover"
-                    onError={(e) => { e.target.style.display = 'none' }}
                   />
                 </div>
               </div>
@@ -185,26 +167,21 @@ export default function About() {
             viewport={{ once: true }}
           >
             <span className="text-yellow-400 font-heading font-semibold text-sm uppercase tracking-widest">
-              Filmi Andaaz
+              As Seen in Dhurandhar
             </span>
             <h2 className="font-heading font-black text-white text-4xl mt-2 mb-5">
-              Woh Suit Jo Rehman Ne{' '}
-              <span className="text-primary-400">Dhurandhar</span>{' '}
-              Mein Pehna
+              The Suit Rehman Wore in{' '}
+              <span className="text-primary-400">Dhurandhar</span>
             </h2>
             <div className="space-y-4 text-gray-300 font-body leading-relaxed">
               <p>
-                Jab Dhurandhar Film Mein Rehman Ka Woh Kaala-Shahi Suit Parday Par Aaya, Toh Poori Delhi Mein
-                Humse Poochha Gaya — <em>"Woh Suit Kahan Se Mila?"</em>
+                When the film came out, everyone in Delhi was asking the same question: where did Rehman get that suit?
               </p>
               <p>
-                Woh Suit Hamari Dukaan Ka Tha. Ek Din Mein Stock Khatam. Yahi Hai KD Garments Ki Taaraf —
-                Jab Parday Ki Duniya Bhi Hamaari Pehnaish Ko Chunti Hai.
+                It was ours. Stock sold out in a day. That is KD Garments for you.
               </p>
               <p>
-                Abhi Bhi Yeh{' '}
-                <strong className="text-white">Rehman Daket Party Suit</strong>{' '}
-                Hamaara Sabse Maangi Wala Article Hai. Limited Stock — Jald Poochhen.
+                The <strong className="text-white">Rehman Daket Party Suit</strong> is still our most in-demand piece. Limited stock, so reach out early.
               </p>
             </div>
             <a
@@ -213,7 +190,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-heading font-bold px-6 py-3 rounded-full transition-all hover:scale-105 mt-6"
             >
-              WhatsApp Par Poochhen <FiArrowRight />
+              Ask on WhatsApp <FiArrowRight />
             </a>
           </motion.div>
 
@@ -227,10 +204,6 @@ export default function About() {
               src="/products/suit-rehman-daket.jpeg"
               alt="Rehman Daket Party Suit"
               className="w-full h-full object-cover"
-              onError={(e) => {
-                e.target.parentElement.classList.add('flex', 'items-center', 'justify-center')
-                e.target.outerHTML = '<p class="text-gray-400 font-body text-sm text-center p-8">Tasveer Jald Aayegi</p>'
-              }}
             />
           </motion.div>
         </div>
@@ -241,9 +214,9 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <span className="text-primary-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              Hamaari Soch
+              What We Stand For
             </span>
-            <h2 className="font-heading font-black text-navy text-4xl mt-2">Woh Baatein Jo Hamen Alag Karti Hain</h2>
+            <h2 className="font-heading font-black text-navy text-4xl mt-2">Why Customers Come Back</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
@@ -266,49 +239,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Team */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <span className="text-primary-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              Safarnama
+              The People Behind KD
             </span>
-            <h2 className="font-heading font-black text-navy text-4xl mt-2">44 Saal Ka Safar</h2>
-          </div>
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200" />
-            <div className="space-y-8">
-              {milestones.map((m, i) => (
-                <motion.div
-                  key={m.year}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative flex items-start gap-6 pl-20"
-                >
-                  <div className="absolute left-0 w-16 h-16 bg-navy rounded-2xl flex items-center justify-center text-primary-400 font-heading font-black text-sm flex-shrink-0">
-                    {m.year}
-                  </div>
-                  <div className="absolute left-8 top-8 w-3 h-3 bg-primary-500 rounded-full border-2 border-white shadow-sm -translate-x-1/2" />
-                  <div className="bg-gray-50 rounded-2xl p-4 flex-1 border border-gray-100">
-                    <p className="text-navy font-body font-medium text-sm">{m.event}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <span className="text-primary-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              KD Ke Apne Log
-            </span>
-            <h2 className="font-heading font-black text-navy text-4xl mt-2">Khaanadaan Ka Karobaar</h2>
+            <h2 className="font-heading font-black text-navy text-4xl mt-2">A Family Business</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {team.map((member, i) => (
@@ -318,7 +256,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center"
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 text-center"
               >
                 <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center text-white font-heading font-black text-2xl mx-auto mb-4">
                   {member.avatar}
@@ -337,25 +275,24 @@ export default function About() {
       {/* CTA */}
       <section className="py-16 bg-navy text-white text-center px-4">
         <h2 className="font-heading font-black text-4xl mb-4">
-          KD Ka{' '}
-          <span className="text-primary-400">Farak</span>{' '}
-          Khud Mehsoos Karein
+          Experience the{' '}
+          <span className="text-primary-400">KD Difference</span>
         </h2>
         <p className="text-gray-300 font-body mb-8 max-w-xl mx-auto">
-          Collection Dekhen Ya Gandhi Nagar Aayein — Hamaare Haath Hamesha Khule Hain.
+          Browse our collection or visit us at Gandhi Nagar, Delhi.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/shop"
             className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-heading font-bold px-7 py-3.5 rounded-full transition-all hover:scale-105"
           >
-            Collection Dekhen <FiArrowRight />
+            Shop Now <FiArrowRight />
           </Link>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 border-2 border-white/30 text-white font-heading font-bold px-7 py-3.5 rounded-full transition-all hover:bg-white/10"
           >
-            Hamare Se Milein
+            Contact Us
           </Link>
         </div>
       </section>
